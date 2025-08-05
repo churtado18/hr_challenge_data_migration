@@ -1,0 +1,25 @@
+{
+	"name": "Destination_jobs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "id",
+				"type": "Int32"
+			},
+			{
+				"name": "job",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[jobs]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

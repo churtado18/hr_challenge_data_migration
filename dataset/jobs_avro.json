@@ -1,0 +1,25 @@
+{
+	"name": "jobs_avro",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "data backup"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat('jobs/', formatDateTime(utcNow(), 'yyyy-MM-dd'))\r\n",
+					"type": "Expression"
+				},
+				"container": "backup"
+			}
+		},
+		"schema": []
+	}
+}

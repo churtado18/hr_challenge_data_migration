@@ -1,0 +1,9 @@
+{
+	"name": "adfhrmigration",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7bc16597-6b31-4402-a316-e3cc67ce5193",
+		"tenantId": "75f3d6cc-90d3-4711-a04e-52409da31811"
+	}
+}

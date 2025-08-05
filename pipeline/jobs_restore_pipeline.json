@@ -27,8 +27,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.jobs",
-						"writeBehavior": "insert",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true
+						},
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},

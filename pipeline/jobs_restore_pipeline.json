@@ -1,0 +1,79 @@
+{
+	"name": "jobs_restore_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy avro file to table",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AvroSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "@concat('jobs/', formatDateTime(utcNow(), 'yyyy-MM-dd'))",
+							"wildcardFileName": "*.avro",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE dbo.jobs",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "int | null"
+								},
+								"sink": {
+									"name": "id"
+								}
+							},
+							{
+								"source": {
+									"name": "job",
+									"type": "string | null"
+								},
+								"sink": {
+									"name": "job"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "jobs_avro",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Destination_jobs",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "data restore"
+		},
+		"annotations": []
+	}
+}

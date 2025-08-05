@@ -119,6 +119,9 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"folder": {
+					"name": "data migration"
+				},
 				"annotations": [],
 				"lastPublishTime": "2025-08-01T05:24:15Z"
 			},
@@ -166,6 +169,9 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "data migration"
 				},
 				"annotations": [],
 				"lastPublishTime": "2025-08-01T06:03:24Z"
@@ -260,6 +266,9 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "data migration"
 				},
 				"annotations": [],
 				"lastPublishTime": "2025-08-01T05:25:41Z"

@@ -1,5 +1,5 @@
 {
-	"name": "department_avro",
+	"name": "hired_employees_avro",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -14,7 +14,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "@concat('department/', formatDateTime(utcNow(), 'yyyy-MM-dd'))\n",
+					"value": "@concat('hired_employees/', formatDateTime(utcNow(), 'yyyy-MM-dd'))\n",
 					"type": "Expression"
 				},
 				"container": "backup"

@@ -17,7 +17,10 @@
 					"value": "concat(@utcNow(),'_backup')",
 					"type": "Expression"
 				},
-				"folderPath": "jobs",
+				"folderPath": {
+					"value": "@concat('jobs/', formatDateTime(utcNow(), 'yyyy-MM-dd'))\r\n",
+					"type": "Expression"
+				},
 				"container": "backup"
 			}
 		},

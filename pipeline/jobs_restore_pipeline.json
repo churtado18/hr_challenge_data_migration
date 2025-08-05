@@ -40,30 +40,7 @@
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "id",
-									"type": "int | null"
-								},
-								"sink": {
-									"name": "id"
-								}
-							},
-							{
-								"source": {
-									"name": "job",
-									"type": "string | null"
-								},
-								"sink": {
-									"name": "job"
-								}
-							}
-						]
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{

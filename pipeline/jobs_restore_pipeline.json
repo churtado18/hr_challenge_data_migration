@@ -20,7 +20,10 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "@concat('jobs/', formatDateTime(utcNow(), 'yyyy-MM-dd'))",
+							"wildcardFolderPath": {
+								"value": "@concat('jobs/', formatDateTime(utcNow(), 'yyyy-MM-dd'))",
+								"type": "Expression"
+							},
 							"wildcardFileName": "*.avro",
 							"enablePartitionDiscovery": false
 						}
@@ -29,7 +32,10 @@
 						"type": "AzureSqlSink",
 						"writeBehavior": "upsert",
 						"upsertSettings": {
-							"useTempDB": true
+							"useTempDB": true,
+							"keys": [
+								"id"
+							]
 						},
 						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false

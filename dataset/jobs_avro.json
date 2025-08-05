@@ -13,10 +13,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "concat(@utcNow(),'_backup')",
-					"type": "Expression"
-				},
 				"folderPath": {
 					"value": "@concat('jobs/', formatDateTime(utcNow(), 'yyyy-MM-dd'))\r\n",
 					"type": "Expression"
